@@ -1,7 +1,7 @@
 function Category() {
   return (
     <div className="category">
-      <h2>Categories Page</h2>
+      <button type="button">Check status</button>
     </div>
   );
 }
