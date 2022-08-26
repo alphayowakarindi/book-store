@@ -1,4 +1,4 @@
-# Math Magicians
+# Book Store
 
 > This is a website for for managing a collection of books.
 
