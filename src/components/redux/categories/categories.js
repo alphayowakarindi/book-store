@@ -4,7 +4,7 @@ const CHECK_STATUS = 'bookstore/categories/CHECK_STATUS';
 // Reducer
 export default function categoriesReducer(
   state = { categories: [] },
-  action = {}
+  action = {},
 ) {
   switch (action.type) {
     case 'CHECK_STATUS':
