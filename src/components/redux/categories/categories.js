@@ -2,7 +2,7 @@
 const CHECK_STATUS = 'CHECK_STATUS ';
 
 // Reducer
-export default function reducer(state = { categories: [] }, action = {}) {
+export default function categoriesReducer(state = { categories: [] }, action = {}) {
   switch (action.type) {
     case 'CHECK_STATUS':
       return 'Under construction';

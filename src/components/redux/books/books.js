@@ -4,7 +4,7 @@ const REMOVE_BOOK = 'REMOVE_BOOK';
 
 // Reducer
 let lastId = 0;
-export default function reducer(state = { books: [] }, action = {}) {
+export default function booksReducer(state = { books: [] }, action = {}) {
   switch (action.type) {
     case 'ADD_BOOK':
       return {
