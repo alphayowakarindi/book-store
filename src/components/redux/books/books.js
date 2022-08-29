@@ -3,7 +3,7 @@ const ADD_BOOK = 'ADD_BOOK ';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
 // Reducer
-let lastId = 0;
+const lastId = 0;
 export default function booksReducer(state = { books: [] }, action = {}) {
   switch (action.type) {
     case 'ADD_BOOK':
@@ -13,9 +13,9 @@ export default function booksReducer(state = { books: [] }, action = {}) {
         books: [
           ...state.books,
           {
-            id: ++lastId,
+            id: lastId + 1,
             title: action.payload.title,
-            title: action.payload.author,
+            author: action.payload.author,
           },
         ],
       };
