@@ -3,7 +3,7 @@ const CHECK_STATUS = 'bookstore/categories/CHECK_STATUS';
 
 // Reducer
 export default function categoriesReducer(
-  state = { categories: [] },
+  state = '',
   action = {},
 ) {
   switch (action.type) {
