@@ -12,23 +12,12 @@ export default function booksReducer(
   action = {}
 ) {
   switch (action.type) {
-    case 'ADD_BOOK':
-      return {
-        ...state,
+    case 'bookstore/books/ADD_BOOK':
+      return [...state, action.payload];
+    case 'bookstore/books/REMOVE_BOOK':
+      console.log(action.payload.id, 'enhe');
+      return [...state.filter((books) => books.id !== action.payload.id)];
 
-        books: [
-          ...state.books,
-          {
-            id: lastId + 1,
-            title: action.payload.title,
-            author: action.payload.author,
-          },
-        ],
-      };
-    case 'REMOVE_BOOK':
-      return {
-        books: state.books.filter((books) => books.id !== action.payload.id),
-      };
     default:
       return state;
   }
