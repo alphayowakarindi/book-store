@@ -3,39 +3,29 @@ const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 // Reducer
-const lastId = 0;
-export default function booksReducer(state = { books: [] }, action = {}) {
+export default function booksReducer(
+  state = [
+    { id: 1, title: 'River between', author: 'Ngugi wa Thiongo' },
+    { id: 2, title: 'Born a Crime', author: 'Trevor Noah' },
+  ],
+  action = {},
+) {
   switch (action.type) {
-    case 'ADD_BOOK':
-      return {
-        ...state,
+    case 'bookstore/books/ADD_BOOK':
+      return [...state, action.payload];
+    case 'bookstore/books/REMOVE_BOOK':
+      return [...state.filter((books) => books.id !== action.payload.id)];
 
-        books: [
-          ...state.books,
-          {
-            id: lastId + 1,
-            title: action.payload.title,
-            author: action.payload.author,
-          },
-        ],
-      };
-    case 'REMOVE_BOOK':
-      return {
-        books: state.books.filter((books) => books.id !== action.payload.id),
-      };
     default:
       return state;
   }
 }
 
 // Action Creators
-export function addBook(title, author) {
+export function addBook(book) {
   return {
     type: ADD_BOOK,
-    payload: {
-      title,
-      author,
-    },
+    payload: book,
   };
 }
 

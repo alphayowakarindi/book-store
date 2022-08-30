@@ -1,16 +1,19 @@
+import { useSelector } from 'react-redux';
 import AddBookForm from './addBookForm';
 import Book from './Book';
 
 function Books() {
+  const books = useSelector((state) => state.booksReducer);
   return (
     <div className="books">
-      <Book title="" author="" />
-      <Book title="" author="" />
-      <Book title="" author="" />
-      <Book title="" author="" />
-      <Book title="" author="" />
-      <Book title="" author="" />
-      <Book title="" author="" />
+      {books.map((book) => (
+        <Book
+          id={book.id}
+          title={book.title}
+          author={book.author}
+          key={book.id}
+        />
+      ))}
       <AddBookForm />
     </div>
   );
