@@ -24,13 +24,10 @@ export default function booksReducer(
 }
 
 // Action Creators
-export function addBook(title, author) {
+export function addBook(book) {
   return {
     type: ADD_BOOK,
-    payload: {
-      title,
-      author,
-    },
+    payload: book,
   };
 }
 
