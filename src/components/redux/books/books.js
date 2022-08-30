@@ -4,7 +4,13 @@ const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 // Reducer
 const lastId = 0;
-export default function booksReducer(state = { books: [] }, action = {}) {
+export default function booksReducer(
+  state = [
+    { id: 1, title: 'River between', author: 'Ngugi wa Thiongo' },
+    { id: 2, title: 'Born a Crime', author: 'Trevor Noah' },
+  ],
+  action = {}
+) {
   switch (action.type) {
     case 'ADD_BOOK':
       return {
