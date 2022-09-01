@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from './redux/books/books';
+import { addBookThunk } from './redux/books/books';
 
 function AddBookForm() {
   const dispatch = useDispatch();
@@ -10,8 +10,16 @@ function AddBookForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const book = { id: uuidv4(), title, author };
-    dispatch(addBook(book));
+    if (!title.trim() && !author.trim()) return;
+    const itemId = uuidv4();
+    const category = 'categories not yet implemented';
+    const book = {
+      item_id: itemId, title, author, category,
+    };
+    dispatch(addBookThunk(book));
+
+    setTitle('');
+    setAuthor('');
   };
 
   return (
