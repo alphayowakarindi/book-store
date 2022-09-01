@@ -1,10 +1,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Global */
+:root {
+  --pale-grey: #f5f6fa;
+  --azure: #0290ff;
+  --white: #e8e8e8;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: var(--pale-grey);
+  overflow-x: hidden;
+  padding-top: 3rem;
+}
+
+/* Navbar */
+nav {
+  width: 87.5rem;
+  height: 5.938rem;
+  margin: 0 auto;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  margin-right: 2.938rem;
+}
+
+nav .logo a {
+  margin-left: 6.25rem;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--azure);
+}
+
+nav ul li:not(:first-child) a {
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.oval {
+  width: 2.813rem;
+  height: 2.813rem;
+  margin: 0 0 0 41.5rem;
+  padding: 0.875rem;
+  border: solid 1px var(--white);
+  border-radius: 50%;
+}
+
+.user-icon {
+  width: 1.063rem;
+  height: 1.063rem;
+  color: var(--azure);
 }
