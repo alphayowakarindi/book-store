@@ -1,9 +1,24 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
 // Actions
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const GET_BOOKS = 'bookstore/books/GET_BOOKS';
-const api =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/XkIXtwdQN2As1Hyi39G5/books';
+const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/XkIXtwdQN2As1Hyi39G5/books';
+
+// Redux thunks
+export const fetchBooksThunk = createAsyncThunk(GET_BOOKS, async () => {
+  const data = await fetch(api);
+  const response = await data.json();
+  const arr = [];
+  const keys = Object.keys(response);
+  keys.map((key) => arr.push({
+    item_id: key,
+    title: response[key][0].title,
+    author: response[key][0].author,
+    category: response[key][0].category,
+  }));
+  return arr;
+});
 
 // Reducer
 export default function booksReducer(state = [], action = {}) {
@@ -18,24 +33,6 @@ export default function booksReducer(state = [], action = {}) {
       return state;
   }
 }
-
-// Redux thunks
-export const fetchBooksThunk = createAsyncThunk(GET_BOOKS, async () => {
-  const data = await fetch(api);
-  const response = await data.json();
-
-  const arr = [];
-  const keys = Object.keys(response);
-  keys.map((key) =>
-    arr.push({
-      item_id: key,
-      title: response[key][0].title,
-      author: response[key][0].author,
-      category: response[key][0].category,
-    })
-  );
-  return ([] = arr);
-});
 
 // Action Creators
 export function addBook(book) {
