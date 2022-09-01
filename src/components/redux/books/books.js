@@ -6,17 +6,11 @@ const api =
   'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/XkIXtwdQN2As1Hyi39G5/books';
 
 // Reducer
-export default function booksReducer(
-  state = [
-    { id: 1, title: 'River between', author: 'Ngugi wa Thiongo' },
-    { id: 2, title: 'Born a Crime', author: 'Trevor Noah' },
-  ],
-  action = {}
-) {
+export default function booksReducer(state = [], action = {}) {
   switch (action.type) {
-    case 'bookstore/books/ADD_BOOK':
+    case 'bookstore/books/ADD_BOOK/fulfilled':
       return [...state, action.payload];
-    case 'bookstore/books/REMOVE_BOOK':
+    case 'bookstore/books/REMOVE_BOOK/fulfilled':
       return [...state.filter((books) => books.id !== action.payload.id)];
 
     default:
