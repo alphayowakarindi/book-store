@@ -20,6 +20,15 @@ export const fetchBooksThunk = createAsyncThunk(GET_BOOKS, async () => {
   return arr;
 });
 
+export const addBookThunk = createAsyncThunk(ADD_BOOK, async (book) => {
+  await fetch(api, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(book),
+  });
+  return book;
+});
+
 // Reducer
 export default function booksReducer(state = [], action = {}) {
   switch (action.type) {
