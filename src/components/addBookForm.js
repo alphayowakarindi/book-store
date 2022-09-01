@@ -10,6 +10,7 @@ function AddBookForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!title.trim() && !author.trim()) return;
     const itemId = uuidv4();
     const category = 'categories not yet implemented';
     const book = {
