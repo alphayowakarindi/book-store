@@ -29,8 +29,8 @@ export const addBookThunk = createAsyncThunk(ADD_BOOK, async (book) => {
   return book;
 });
 
-export const removeBookThunk = createAsyncThunk(ADD_BOOK, async (itemId) => {
-  await fetch(`api/${itemId}`, {
+export const removeBookThunk = createAsyncThunk(REMOVE_BOOK, async (itemId) => {
+  await fetch(`${api}/${itemId}`, {
     method: 'DELETE',
     body: JSON.stringify(itemId),
   });
