@@ -17,6 +17,9 @@ function AddBookForm() {
       item_id: itemId, title, author, category,
     };
     dispatch(addBookThunk(book));
+
+    setTitle('');
+    setAuthor('');
   };
 
   return (
