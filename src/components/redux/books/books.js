@@ -50,20 +50,3 @@ export default function booksReducer(state = [], action = {}) {
       return state;
   }
 }
-
-// Action Creators
-export function addBook(book) {
-  return {
-    type: ADD_BOOK,
-    payload: book,
-  };
-}
-
-export function removeBook(id) {
-  return {
-    type: REMOVE_BOOK,
-    payload: {
-      id,
-    },
-  };
-}
