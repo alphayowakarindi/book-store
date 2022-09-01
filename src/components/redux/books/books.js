@@ -11,7 +11,7 @@ export default function booksReducer(state = [], action = {}) {
     case 'bookstore/books/ADD_BOOK/fulfilled':
       return [...state, action.payload];
     case 'bookstore/books/REMOVE_BOOK/fulfilled':
-      return [...state.filter((books) => books.id !== action.payload.id)];
+      return [...state.filter((books) => books.item_id !== action.payload)];
     case 'bookstore/books/GET_BOOKS/fulfilled':
       return action.payload;
     default:
