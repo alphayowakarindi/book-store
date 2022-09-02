@@ -11,6 +11,7 @@
   --pale-grey: #f5f6fa;
   --azure: #0290ff;
   --white: #e8e8e8;
+  --warm-grey: #888;
 }
 
 li {
@@ -87,7 +88,7 @@ nav ul li:not(:first-child) a {
 .book {
   width: 75rem;
   height: 10.625rem;
-  margin: 2.313rem 6.25rem 0;
+  margin: 2.313rem auto 0 auto;
   padding: 2rem 9.188rem 1.625rem 1.688rem;
   border-radius: 4px;
   border: solid 1px var(--white);
@@ -137,7 +138,6 @@ nav ul li:not(:first-child) a {
 }
 
 .book .book-info .update-btns button {
-  margin: 0;
   border: none;
   margin: 0.888rem 0.938rem 0.125rem 0;
   font-size: 0.875rem;
@@ -161,6 +161,7 @@ nav ul li:not(:first-child) a {
   display: flex;
   align-items: center;
 }
+
 .percentage-progress span {
   display: block;
 }
@@ -177,6 +178,7 @@ nav ul li:not(:first-child) a {
   color: #121212;
   margin-left: 1rem;
 }
+
 .percentage-progress .percentage span:nth-child(2) {
   width: 5rem;
   height: 1.125rem;
@@ -191,10 +193,7 @@ nav ul li:not(:first-child) a {
   margin-left: 1rem;
 }
 
-.progress-satus span {
-  display: block;
-}
-.progress-satus span:nth-child(1) {
+.progress-satus .current-chapter {
   opacity: 0.5;
   font-size: 0.813rem;
   font-weight: 300;
@@ -203,10 +202,10 @@ nav ul li:not(:first-child) a {
   line-height: normal;
   letter-spacing: normal;
   color: #121212;
+  display: block;
 }
 
-.progress-satus span:nth-child(2) {
-  font-family: RobotoSlab;
+.progress-satus .current-lesson {
   font-size: 1rem;
   font-weight: 300;
   font-stretch: normal;
@@ -215,9 +214,10 @@ nav ul li:not(:first-child) a {
   letter-spacing: -0.4px;
   color: #121212;
   margin: 0.5rem 0 1.5rem 0;
+  display: block;
 }
 
-.progress-satus button {
+.progress-satus .update-btn {
   width: 11.5rem;
   height: 2.063rem;
   border-radius: 3px;
@@ -232,4 +232,66 @@ nav ul li:not(:first-child) a {
   letter-spacing: 0.5px;
   text-align: center;
   cursor: pointer;
+}
+
+/* addBookForm component */
+.add-book-form {
+  width: 75rem;
+  margin: 2.313rem auto 0 auto;
+}
+
+.add-book-form .line {
+  width: 75rem;
+  height: 0.125rem;
+
+  /* margin: auto; */
+  border: solid 1px var(--white);
+}
+
+.add-book-form h3 {
+  margin: 1.813rem 32.75rem 1.188rem 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: var(--warm-grey);
+}
+
+.add-book-form input:nth-child(1) {
+  width: 41.5rem;
+  height: 2.813rem;
+  margin-right: 2.125rem;
+  padding: 0.813rem 35.688rem 0.813rem 1.063rem;
+  border-radius: 4px;
+  border: solid 1px var(--white);
+  background-color: #fff;
+}
+
+.add-book-form input:nth-child(2) {
+  width: 17.813rem;
+  height: 2.813rem;
+  padding-left: 1rem;
+  border-radius: 4px;
+  border: solid 1px var(--white);
+  background-color: #fff;
+}
+
+.add-book-form .add-book-btn {
+  width: 11.5rem;
+  height: 2.813rem;
+  margin-left: 1.125rem;
+  border-radius: 3px;
+  background-color: var(--azure);
+  border: none;
+  cursor: pointer;
+  font-size: 0.813rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
 }

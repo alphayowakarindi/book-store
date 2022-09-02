@@ -38,9 +38,9 @@ function Book({ itemId, title, author }) {
         </div>
       </div>
       <div className="progress-satus">
-        <span>CURRENT CHAPTER</span>
-        <span>Chapter 17</span>
-        <button type="button">UPDATE PROGRESS</button>
+        <span className="current-chapter">CURRENT CHAPTER</span>
+        <span className="current-lesson">Chapter 17</span>
+        <button type="button" className="update-btn">UPDATE PROGRESS</button>
       </div>
     </div>
   );

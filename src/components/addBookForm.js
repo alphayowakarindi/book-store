@@ -14,7 +14,10 @@ function AddBookForm() {
     const itemId = uuidv4();
     const category = 'categories not yet implemented';
     const book = {
-      item_id: itemId, title, author, category,
+      item_id: itemId,
+      title,
+      author,
+      category,
     };
     dispatch(addBookThunk(book));
 
@@ -24,6 +27,8 @@ function AddBookForm() {
 
   return (
     <div className="add-book-form">
+      <div className="line" />
+      <h3>ADD NEW BOOK</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -37,7 +42,7 @@ function AddBookForm() {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <button type="submit">ADD BOOK</button>
+        <button type="submit" className="add-book-btn">ADD BOOK</button>
       </form>
     </div>
   );
